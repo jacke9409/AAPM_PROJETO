@@ -11,6 +11,7 @@ class Produto(Base):
     nome = Column(String(150), nullable=False)
     descricao = Column(String(500), nullable=True)
     preco = Column(Float, nullable=False)
+    preco_associado = Column(Float, nullable=True)
     tamanho = Column(String(50), nullable=True)
     estoque = Column(Integer, default=0)
     disponivel = Column(Boolean, default=True)

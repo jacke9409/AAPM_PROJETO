@@ -3,9 +3,8 @@ seed_produtos.py
 Popula o banco de dados com as categorias e produtos da AAPM.
 Execute com: python seed_produtos.py
 """
-
-from app.database import SessionLocal, engine
-from app.models import Base, Categoria, Produto
+from app.database import SessionLocal, Base, engine
+from app.models import Categoria, Produto
 
 # Garante que as tabelas existam
 Base.metadata.create_all(bind=engine)

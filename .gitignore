@@ -1,1 +1,34 @@
+# Variáveis de ambiente - NUNCA subir pro GitHub
 .env
+
+# Ambiente virtual
+venv/
+env/
+.venv/
+
+# Banco de dados SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Imagens de produtos enviadas
+app/static/assets/produtos/
+
+# VS Code
+.vscode/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Build
+dist/
+build/
+*.egg-info/
