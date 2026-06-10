@@ -26,3 +26,15 @@ from app.models.fornecedor import Fornecedor
 from app.models.produto import Produto
 from app.models.venda import Venda, ItemVenda, Nota
 Cria esse arquivo na mão mesmo, são só essas 5 linhas. Isso garante que quando o seed.py e os routers importarem os models, todos já estejam carregados e as relações entre tabelas funcionem.
+
+# Instale as dependências se ainda não tiver
+pip install fastapi uvicorn sqlalchemy python-jose passlib[bcrypt] python-dotenv python-multipart
+
+# Popula o banco
+python seed.py
+
+# Sobe o servidor
+uvicorn main:app --reload
+
+python -m venv venv ambiente virtual
+venv\Scripts\activate abrindo ambiente virtual 
