@@ -9,3 +9,11 @@ git add .
 git commit -m "descrição do que fiz"
 git push origin main primeiro e depos
 git push origin jackelyne (ou yasmin)
+
+O database.py vai na pasta app/ e o .env fica na raiz do projeto. O que cada parte faz:
+engine — é a conexão com o SQLite. O check_same_thread: False é necessário porque o FastAPI usa threads diferentes por requisição e o SQLite reclamaria disso.
+SessionLocal — é a "sessão" do banco. Toda vez que uma rota precisa acessar o banco, ela abre uma sessão nova e fecha no final.
+Base — é a classe que todos os seus models vão herdar. Quando você fizer class Produto(Base), o SQLAlchemy sabe que aquilo é uma tabela.
+get_db() — é a dependência que os routers vão usar com Depends(get_db) pra receber a sessão do banco automaticamente.
+criar_tabelas() — vai ser chamada no main.py na inicialização. Ela lê todos os models e cria as tabelas no banco se ainda não existirem.
+O aapm.db vai aparecer na raiz do projeto automaticamente quando você rodar o sistema pela primeira vez — não precisa criar na mão.
